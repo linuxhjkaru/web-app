@@ -1,0 +1,23 @@
+h2 Sign in
+
+.row
+  .col-md-6.col-md-offset-3
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .input-wrap
+        = f.label :emai
+        = f.email_field :email, autofocus: true, class: "form-control"
+
+      .input-wrap
+        = f.label :password
+        = f.password_field :password, autocomplete: "off", class: "form-control"
+
+      label.remember for="user_remember_me"
+        - if devise_mapping.rememberable?
+          = f.check_box :remember_me
+          |&nbsp;Remember_me
+
+      .button-login
+      button.btn.btn-primary type="submit" Sign in
+
+.row.text-center
+  = render "users/shared/links"
