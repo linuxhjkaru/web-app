@@ -19,5 +19,9 @@ module WebApp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.autoload_paths += %W(#{config.root}/lib)
+
+    config.assets.enabled = true
+    Slim::Engine.set_default_options :pretty => true unless Rails.env == 'production'
   end
 end
