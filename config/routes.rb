@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     sign_out: 'logout',
     sign_up: 'join'
   }
+
+  resources :users do
+    resources :youtubes
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

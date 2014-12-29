@@ -1,0 +1,10 @@
+
+- @youtubes.each do |youtube|
+    .col-md-6
+    .col-md-6 class='youtube-list' href='' youtube-id='#{youtube.youtube_id}'
+      .col-md-3
+        image src="http://img.youtube.com/vi/#{youtube.youtube_id}/1.jpg" style="height: 100px; width: 100px; padding-bottom: 10px; padding-right: -15px"
+      .col-md-9
+        label = youtube.title
+        br
+        = Time.at(youtube.duration.to_i).strftime("%M:%S")

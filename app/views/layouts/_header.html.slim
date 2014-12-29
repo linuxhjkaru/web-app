@@ -7,6 +7,7 @@ header.navbar.navbar-fixed-top.navbar-inverse
           li = link_to "Home", root_path
           li = link_to "About", about_path
           - if user_signed_in?
+            li = link_to "Youtube", user_youtubes_path(current_user.id)
             li = link_to "Log out", destroy_user_session_path, method: :delete
           - else
             li = link_to "Sign in", user_session_path

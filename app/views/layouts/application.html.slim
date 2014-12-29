@@ -11,6 +11,6 @@ html
     = render 'layouts/header'
     .container
       = yield
-
-      = render 'layouts/footer'
+      = yield :content
+      /= yield :footer
       = yield :bottom_script
