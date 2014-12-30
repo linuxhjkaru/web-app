@@ -21,6 +21,12 @@ Rails.application.routes.draw do
   resources :users do
     resources :youtubes
   end
+
+  resource :user, path: "setting", only: [:edit, :update]
+
+  get 'sessions/callback'
+  get  '/auth/:provider/callback', :to => 'sessions#callback'
+  post '/auth/:provider/callback', :to => 'sessions#callback'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

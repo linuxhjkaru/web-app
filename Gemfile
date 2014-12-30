@@ -48,6 +48,12 @@ gem 'mongoid_nested_set', :github => 'andryunin/mongoid_nested_set', :branch => 
 gem 'pry-rails'              # railsでpryが使える
 gem 'pry-byebug'             # pryでデバックコマンドが使える
 gem 'pry-doc'
+
+#omioauth
+gem 'omniauth'
+gem "omniauth-google-oauth2"
+gem "koala", "~> 1.10.0rc"
+gem "google-api-client"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

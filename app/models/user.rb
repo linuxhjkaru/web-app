@@ -36,6 +36,7 @@ class User
   # field :locked_at,       type: Time
 
   has_many :youtubes
+  has_one :profile, autobuild: true, dependent: :destroy
 
   class << self
     def serialize_from_session key, salt
