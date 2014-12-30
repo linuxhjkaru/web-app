@@ -8,6 +8,14 @@ header.navbar.navbar-fixed-top.navbar-inverse
           li = link_to "About", about_path
           - if user_signed_in?
             li = link_to "Youtube", user_youtubes_path(current_user.id)
-            li = link_to "Log out", destroy_user_session_path, method: :delete
+            li.dropdown#fat-menu
+              a.dropdown-toggle data-toggle="dropdown"
+                |Account
+                span.caret
+              ul.dropdown-menu aria-labelledby="menu1" role="menu"
+                li role="presentation" = link_to "Profile", "#"
+                li role="presentation" = link_to "Setting", edit_user_path(current_user)
+                li.divider role="presentation"
+                li role="presentation" = link_to "Log out", destroy_user_session_path, method: :delete
           - else
             li = link_to "Sign in", user_session_path
